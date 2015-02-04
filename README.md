@@ -4,6 +4,8 @@ Nette Errbit (Airbrake) error logger
 Errbit (Airbrake) error handler for nette applications.
 For communication with errbit it use package [flippa/errbit-php](https://github.com/flippa/errbit-php). 
 
+*Warning:* This logger isn't working well od developemnt mode in nette. Handling errors in production is fine. In development you have Tracy with all stack trace and you don't need to log this errros on errbit.
+
 Instalation
 -----------
 
