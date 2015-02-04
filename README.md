@@ -25,12 +25,12 @@ parameters:
 		send_errors: true
 		api_key: your-api-key
 		host: errbit-host.com
-		port: 80                         # optional
-		secure: false                    # optional
-		project_root: /your/project/root # optional
-		environment_name: production     # optional
+		port: 80                                        # optional
+		secure: false                                   # optional
+		project_root: /your/project/root                # optional
+		environment_name: production                    # optional
 		params_filters: ['/password/', '/card_number/'] # optional
-		backtrace_filters: ['#/some/long/path#'] # optional
+		backtrace_filters: ['#/some/long/path#']        # optional
 ```
 
 All configurations are based on package [flippa/errbit-php](https://github.com/flippa/errbit-php)
