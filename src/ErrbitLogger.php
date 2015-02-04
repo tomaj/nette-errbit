@@ -6,53 +6,53 @@ use Tracy\Logger;
 
 class ErrbitLogger extends Logger
 {
-  /** @var boolean */
-  private static $ignoreNotice;
+    /** @var boolean */
+    private static $ignoreNotice;
 
-  /**
-   * Register logger to \Tracy\Debugger
-   * @param array $config
-   * @param boolean $ignoreNotice
-   */
-  public static function register($config, $ignoreNotice = false)
-  {
-    self::$ignoreNotice = $ignoreNotice;
+    /**
+     * Register logger to \Tracy\Debugger
+     * @param array $config
+     * @param boolean $ignoreNotice
+     */
+    public static function register($config, $ignoreNotice = false)
+    {
+        self::$ignoreNotice = $ignoreNotice;
 
-    if ($config['send_errors']) {
-      unset($config['send_errors']);
+        if ($config['send_errors']) {
+            unset($config['send_errors']);
 
-      $logger = new self();
-      $logger->directory = & TDebugger::$logDirectory;
-      $logger->email = & TDebugger::$email;
-      $logger->mailer = & TDebugger::$mailer;
-      $logger->emailSnooze = & TDebugger::$emailSnooze;
+            $logger = new self();
+            $logger->directory = & TDebugger::$logDirectory;
+            $logger->email = & TDebugger::$email;
+            $logger->mailer = & TDebugger::$mailer;
+            $logger->emailSnooze = & TDebugger::$emailSnooze;
 
-      TDebugger::setLogger($logger);
+            TDebugger::setLogger($logger);
 
-      \Errbit::instance()
-        ->configure($config);
-//        ->start();
-    }
-  }
-
-  /**
-   * Wrapper for log function
-   * @param array $message
-   * @param string $priority
-   * @return bool
-   */
-  public function log($message, $priority = NULL)
-  {
-    if (self::$ignoreNotice && (strpos($message, 'PHP Notice') !== false)) {
-      return true;
+            \Errbit::instance()
+                ->configure($config);
+//                ->start();
+        }
     }
 
-    $response = parent::log($message, $priority);
+    /**
+     * Wrapper for log function
+     * @param array $message
+     * @param string $priority
+     * @return bool
+     */
+    public function log($message, $priority = null)
+    {
+        if (self::$ignoreNotice && (strpos($message, 'PHP Notice') !== false)) {
+            return true;
+        }
 
-    \Errbit::instance()->notify(
-      new \Exception($priority . ' ' . $message[1])
-    );
+        $response = parent::log($message, $priority);
 
-    return $response;
-  }
+        \Errbit::instance()->notify(
+            new \Exception($priority . ' ' . $message[1])
+        );
+
+        return $response;
+    }
 }
