@@ -1,4 +1,4 @@
-Nette Errbit (Airbrake) erro logger
+Nette Errbit (Airbrake) error logger
 ===================================
 
 Errbit (Airbrake) error handler for nette applications.
