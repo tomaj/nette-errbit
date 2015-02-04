@@ -4,7 +4,14 @@ Nette Errbit (Airbrake) error logger
 Errbit (Airbrake) error handler for nette applications.
 For communication with errbit it use package [flippa/errbit-php](https://github.com/flippa/errbit-php). 
 
-*Warning:* This logger isn't working well od developemnt mode in nette. Handling errors in production is fine. In development you have Tracy with all stack trace and you don't need to log this errros on errbit.
+[![Build Status](https://secure.travis-ci.org/tomaj/nette-errbit.png)](http://travis-ci.org/tomaj/nette-errbit)
+
+[![Latest Stable Version](https://poser.pugx.org/tomaj/nette-errbit/v/stable.svg)](https://packagist.org/packages/tomaj/nette-errbit)
+[![Latest Unstable Version](https://poser.pugx.org/tomaj/nette-errbit/v/unstable.svg)](https://packagist.org/packages/tomaj/nette-errbit)
+[![License](https://poser.pugx.org/tomaj/nette-errbit/license.svg)](https://packagist.org/packages/tomaj/nette-errbit)
+
+
+**Warning:** This logger isn't working well od developemnt mode in nette. Handling errors in production is fine. In development you have Tracy with all stack trace and you don't need to log this errros on errbit.
 
 Instalation
 -----------
@@ -44,5 +51,6 @@ Tomaj\Errbit\ErrbitLogger::register($container->parameters['errbit']);
 ```
 
 **Thats it!** You should see your logs in your errbit
+
 
 
