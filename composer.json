@@ -13,7 +13,7 @@
     "require": {
         "php": ">= 5.3.7",
         "tracy/tracy": "~2.2",
-        "flippa-official/errbit-php": "dev-master"
+        "flippa-official/errbit-php": "*@dev"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~2.2"
