@@ -48,6 +48,11 @@ In nette application you add this line to *bootstrap.php* after you create *$con
 
 ``` php
 Tomaj\Errbit\ErrbitLogger::register($container->parameters['errbit']);
+Tomaj\Errbit\ErrbitLogger::ignoreNotices();
+Tomaj\Errbit\ErrbitLogger::addIgnoreMessage('Some exception message text');
+
+// Default log priorities: error, exception. To rewrite call:
+Tomaj\Errbit\ErrbitLogger::setLogPriorities(array('error', 'exception', 'access'));
 ```
 
 **Thats it!** You should see your logs in your errbit
