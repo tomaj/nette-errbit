@@ -79,7 +79,7 @@ class ErrbitLogger extends Logger
     {
         // If message contains one of ignored messages, shut down
         foreach (self::$ignoredMessages as $ignoredMessage) {
-            if (strpos($message, $ignoredMessage) !== false) {
+            if (strpos($message[1], $ignoredMessage) !== false) {
                 return true;
             }
         }
