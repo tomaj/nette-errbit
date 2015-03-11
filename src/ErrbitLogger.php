@@ -25,11 +25,8 @@ class ErrbitLogger extends Logger
         if ($config['send_errors']) {
             unset($config['send_errors']);
 
-            $logger = new self();
-            $logger->directory = & TDebugger::$logDirectory;
+            $logger = new self(TDebugger::$logDirectory);
             $logger->email = & TDebugger::$email;
-            $logger->mailer = & TDebugger::$mailer;
-            $logger->emailSnooze = & TDebugger::$emailSnooze;
 
             TDebugger::setLogger($logger);
 
