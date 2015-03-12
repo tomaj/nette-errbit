@@ -84,11 +84,14 @@ class ErrbitLogger extends Logger
         // Log to file
         $response = parent::log($message, $priority);
 
-        // If priorities match error log to errbit
         if (in_array($priority, self::$priorities)) {
-            \Errbit::instance()->notify(
-                new \Exception($priority . ' ' . $message[1])
-            );
+            if ($message instanceof \Exception) {
+                \Errbit::instance()->notify($message);
+            } else {
+                \Errbit::instance()->notify(
+                    new \Exception($priority . ' ' . $message)
+                );
+            }
         }
 
         return $response;
