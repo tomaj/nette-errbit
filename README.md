@@ -5,6 +5,7 @@ Errbit (Airbrake) error handler for nette applications.
 For communication with errbit it use package [flippa/errbit-php](https://github.com/flippa/errbit-php). 
 
 [![Build Status](https://secure.travis-ci.org/tomaj/nette-errbit.png)](http://travis-ci.org/tomaj/nette-errbit)
+[![Code Climate](https://codeclimate.com/github/tomaj/nette-errbit/badges/gpa.svg)](https://codeclimate.com/github/tomaj/nette-errbit)
 
 [![Latest Stable Version](https://poser.pugx.org/tomaj/nette-errbit/v/stable.svg)](https://packagist.org/packages/tomaj/nette-errbit)
 [![Latest Unstable Version](https://poser.pugx.org/tomaj/nette-errbit/v/unstable.svg)](https://packagist.org/packages/tomaj/nette-errbit)
