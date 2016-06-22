@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": ">= 5.3.7",
+        "ext-xml": "*",
         "tracy/tracy": "~2.3"
     },
     "require-dev": {
